@@ -1,0 +1,28 @@
+import setuptools
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="ConsulClient",
+    version="0.1.0",
+    author="Rodrigo Alejandro Loza Lucero",
+    author_email="lozuwaucb@gmail.com",
+    description="A library that abstracts consul rest api.",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/lozuwa/ConsulClient",
+    packages=['ConsulClient'],
+    install_requires=[
+        'bleach==3.1.0',
+        'certifi==2018.11.29',
+        'chardet==3.0.4',
+        'docutils==0.14',
+        'setuptools==40.8.0',
+    ],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: APACHE",
+        "Operating System :: OS Independent",
+    ],
+)
