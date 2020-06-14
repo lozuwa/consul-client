@@ -19,3 +19,10 @@ if response["successful_response"]:
 
 ```
 
+# Build package
+Run the following command:
+
+```
+python setup.py sdist bdist_wheel
+```
+

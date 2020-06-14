@@ -1,6 +1,6 @@
 from ConsulClient.Utils import Utils
 
-class KvHttpResponse(object):
+class KVResponse(object):
 
     @staticmethod
     def get_read_response(response=None):

@@ -1,3 +1,4 @@
+#packages=['ConsulClient', 'ConsulClient/v1/kv/'],
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -12,7 +13,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/lozuwa/ConsulClient",
-    packages=['ConsulClient'],
+    packages=setuptools.find_packages(),
+    keywords=['consul', 'distributed', 'key', 'value'],
     install_requires=[
         'bleach==3.1.0',
         'certifi==2018.11.29',

@@ -1,7 +1,7 @@
-version: "3.4"
+version: "3.5"
 
 networks:
-  iot:
+  consul:
     driver: overlay
     attachable: true
 
@@ -19,16 +19,16 @@ services:
     environment:
       - CONSUL_BIND_INTERFACE=eth0
       - CONSUL_CLIENT_INTERFACE=eth0
-      - CONSUL_HTTP_TOKEN=3bcd559f-1514-439a-a482-c92854f1560e
+      #- CONSUL_HTTP_TOKEN=3bcd559f-1514-439a-a482-c92854f1560e
     ports:
       - target: 8500
         published: 8500
         protocol: tcp
         mode: host
     networks:
-      - iot
-    volumes:
-      - /Users/rloza-macbook/Downloads/consul/data/:/consul/data/
+      - consul 
+#    volumes:
+#      - /Users/rloza-macbook/Downloads/consul/data/:/consul/data/
     deploy:
       endpoint_mode: dnsrr
       replicas: 1

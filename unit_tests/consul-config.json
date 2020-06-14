@@ -1,5 +1,5 @@
 {
-  "datacenter": "mojix",
+  "datacenter": "america",
   "data_dir": "/opt/consul",
   "log_level": "INFO",
   "node_name": "consul-001",
