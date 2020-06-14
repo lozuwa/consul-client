@@ -1,6 +1,20 @@
 # Consul Client
 A python3 compatible library that abstracts the Consul Rest API. 
 
+# Install the library
+Install it from <a href="https://test.pypi.org/project/ConsulClient/0.1.0/">pypi</a>
+
+```bash
+pip3 install -i https://test.pypi.org/simple/ ConsulClient==0.1.0
+```
+
+Install it using the released python wheel.
+
+```bash
+wget https://github.com/lozuwa/consul-client/releases/download/0.1.0/ConsulClient-0.1.0-py3-none-any.whl
+pip3 install ConsulClient-0.1.0-py3-none-any.whl
+```
+
 # Examples
 
 ## KV (Basic CRUD)
