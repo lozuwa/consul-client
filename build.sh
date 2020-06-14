@@ -17,3 +17,6 @@ fi;
 # Install wheel.
 pip3 install --force-reinstall dist/ConsulClient-0.1.0-py3-none-any.whl
 
+# To pipy
+#twine upload --repository-url https://test.pypi.org/legacy/ dist/* --verbose
+
