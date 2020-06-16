@@ -5,7 +5,7 @@ from requests.compat import urljoin
 from ConsulClient.v1.kv.KVResponse import KVResponse
 from ConsulClient.Settings import Settings
 
-logging.basicConfig(stream=sys.stdout, level=logging.info, format="%(asctime)-15s %(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(asctime)-15s %(name)s - %(levelname)s - %(message)s")
 
 
 class ConsulKvClient(object):
