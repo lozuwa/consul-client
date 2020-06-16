@@ -1,5 +1,6 @@
 import base64
 
+
 class Utils(object):
 
     @staticmethod

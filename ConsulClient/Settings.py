@@ -1,5 +1,6 @@
 from requests.compat import urljoin
 
+
 class Settings(object):
 
     # General parameters with default values and env variables.

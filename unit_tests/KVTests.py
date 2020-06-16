@@ -2,6 +2,7 @@ import unittest
 import json
 from ConsulClient.ConsulClient import ConsulClient
 
+
 class TestConsulClientKV(unittest.TestCase):
   def setUp(self):
     self.consul_client = ConsulClient(host="http://localhost", port="8500", prefix="dev/")
@@ -44,6 +45,7 @@ class TestConsulClientKV(unittest.TestCase):
     key = "ConsulClient.author"
     response = self.consul_client.delete_key(key=key)
     self.assertEqual(response["successful_response"], True)
+
 
 if __name__ == "__main__":
   unittest.main()

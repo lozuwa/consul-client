@@ -1,5 +1,6 @@
 from ConsulClient.Utils import Utils
 
+
 class KVResponse(object):
 
     @staticmethod

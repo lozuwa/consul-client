@@ -6,6 +6,7 @@ from ConsulClient.v1.kv.ConsulKvClient import ConsulKvClient
 
 logging.basicConfig(stream=sys.stdout, level=logging.info, format="%(asctime)-15s %(name)s - %(levelname)s - %(message)s")
 
+
 class ConsulClient(object):
 
     def __init__(self, host=None, port=None, token=None, prefix=None):
@@ -18,7 +19,8 @@ class ConsulClient(object):
         # Create consul kv client.
         self.consulKvClient = ConsulKvClient(host=self.host, port=self.port, token=self.token, prefix=prefix)
 
-    def set_log_level(self, level=None):
+    @staticmethod
+    def set_log_level(level=None):
         """
         Set the log level of the ConsulClient library.
         :param level: A logging.LEVEL object. E.g: logging.DEBUG, logging.info.
