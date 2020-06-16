@@ -1,4 +1,3 @@
-#packages=['ConsulClient', 'ConsulClient/v1/kv/'],
 import setuptools
 
 with open("README.md", "r") as fh:
