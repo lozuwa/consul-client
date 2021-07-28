@@ -15,6 +15,8 @@ wget https://github.com/lozuwa/consul-client/releases/download/0.1.0/ConsulClien
 pip3 install ConsulClient-0.1.0-py3-none-any.whl
 ```
 
+Input parameters
+`user="", password=""` are to support Basic Auth connections to Consul.
 # Examples
 
 ## KV (Basic CRUD)
@@ -25,7 +27,7 @@ pip3 install ConsulClient-0.1.0-py3-none-any.whl
 from ConsulClient.ConsulClient import ConsulClient
 
 kvs = {"kafka.bootstrap": "kafka-001:2181", "mongo.host": "mongo:27017"}
-consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="")
+consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="", user="", password="")
 
 for key, value in kvs.items():
   response = self.consul_client.create_update_key(key=key, value=value)
@@ -41,7 +43,7 @@ for key, value in kvs.items():
 from ConsulClient.ConsulClient import ConsulClient
 
 kvs = {"kafka.bootstrap": "kafka-001:2181", "mongo.host": "mongo:27017"}
-consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="")
+consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="", user="", password="")
 
 for key, value in kvs.items():
   response = self.consul_client.read_key(key=key)
@@ -58,7 +60,7 @@ for key, value in kvs.items():
 from ConsulClient.ConsulClient import ConsulClient
 
 kvs = {"kafka.bootstrap": "kafka-001:2181", "mongo.host": "mongo:27017"}
-consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="dev/")
+consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="dev/", user="", password="")
 
 # Create keys.
 for key, value in kvs.items():
@@ -77,7 +79,7 @@ if response["successful_response"] == True:
 from ConsulClient.ConsulClient import ConsulClient
 
 kvs = {"kafka.bootstrap": "kafka-001:2181", "mongo.host": "mongo:27017"}
-consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="")
+consul_client = ConsulClient(host="http://localhost", port="8500", token="", prefix="", user="", password="")
 
 for key, value in kvs.items():
   response = self.consul_client.delete_key(key=key)

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ConsulClient",
-    version="0.1.0",
+    version="0.1.2",
     author="Rodrigo Alejandro Loza Lucero",
     author_email="lozuwaucb@gmail.com",
     description="A library that abstracts consul rest api.",

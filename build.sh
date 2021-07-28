@@ -6,7 +6,7 @@
 #docker stack deploy -c unit_tests/consul.yaml consul
 
 # Build wheel package.
-python3 setup.py sdist bdist_wheel
+python setup.py sdist bdist_wheel
 if [[ $? -ne 0 ]]; then
   echo "Build not successful"
   exit 1
