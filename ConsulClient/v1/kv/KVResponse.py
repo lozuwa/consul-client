@@ -13,8 +13,11 @@ class KVResponse(object):
             for kv in body:
                 key = kv["Key"]
                 value = kv["Value"]
-                value_decoded = Utils.decode_base64(value)
-                body_response[key] = value_decoded
+                if value:
+                    value_decoded = Utils.decode_base64(value)
+                    body_response[key] = value_decoded
+                else:
+                    pass
         else:
             body_response = response.text
         return {"successful_response": ok_response, "status_code": status_code, "body": body_response}

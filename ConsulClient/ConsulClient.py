@@ -4,20 +4,30 @@ import logging
 from ConsulClient.Settings import Settings
 from ConsulClient.v1.kv.ConsulKvClient import ConsulKvClient
 
-logging.basicConfig(stream=sys.stdout, level=logging.info, format="%(asctime)-15s %(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(stream=sys.stdout, level=logging.info,
+                    format="%(asctime)-15s %(name)s - %(levelname)s - %(message)s")
 
 
 class ConsulClient(object):
 
-    def __init__(self, host=None, port=None, token=None, prefix=None):
+    def __init__(self, host=None, port=None, token=None, prefix=None, user=None, password=None):
         # General settings.
         logging.info(f"host: {host} port: {port} token: {token} prefix: {prefix}")
         self.host = host if host != None else Settings.get_setting(setting=Settings.DEFAULT_HOST)
         self.port = port if port != None else Settings.get_setting(setting=Settings.DEFAULT_PORT)
         self.token = token
+        # Basic Auth Support
+        self.user = user if user != None else Settings.get_setting(setting=Settings.DEFAULT_BASIC_USER)
+        self.password = password if password != None else Settings.get_setting(setting=Settings.DEFAULT_BASIC_PASSWORD)
+
         logging.info(f"host: {self.host} port: {self.port} token: {self.token}")
         # Create consul kv client.
-        self.consulKvClient = ConsulKvClient(host=self.host, port=self.port, token=self.token, prefix=prefix)
+        self.consulKvClient = ConsulKvClient(host=self.host,
+                                             port=self.port,
+                                             token=self.token,
+                                             prefix=prefix,
+                                             user=user,
+                                             password=password)
 
     @staticmethod
     def set_log_level(level=None):
