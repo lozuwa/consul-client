@@ -16,7 +16,7 @@ setuptools.setup(
     keywords=['consul', 'distributed', 'key', 'value'],
     install_requires=[
         'bleach==3.1.0',
-        'certifi==2018.11.29',
+        'certifi==2022.12.7',
         'chardet==3.0.4',
         'docutils==0.14',
         'setuptools==40.8.0',
