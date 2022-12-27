@@ -19,7 +19,7 @@ setuptools.setup(
         'certifi==2018.11.29',
         'chardet==3.0.4',
         'docutils==0.14',
-        'setuptools==40.8.0',
+        'setuptools==65.5.1',
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
